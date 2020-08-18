@@ -40,19 +40,19 @@ class Column extends React.Component {
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>{title}
-        <span className={styles.icon}>
-              <Icon name={icon} />
-            </span>
+          <span className={styles.icon}>
+            <Icon name={icon} />
+          </span>
             {title}
-          </h3>
-          <div className={styles.cards}>
+        </h3>
+        <div className={styles.cards}>
           {this.state.cards.map(({ key, ...columnProps }) => (
             <Card key={key} {...columnProps} />
           ))}
-          </div>
-          <div className={styles.creator}>>
-            <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
-          </div>  
+        </div>
+        <div className={styles.creator}>
+          <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
+        </div>  
       </section>
     );
   }
