@@ -17,6 +17,7 @@ class Column extends React.Component {
     cards: PropTypes.array,
     id: PropTypes.string,
     addCard: PropTypes.func,
+    icon: PropTypes.icon,
   }
 
   addCard(title) {
@@ -28,9 +29,9 @@ class Column extends React.Component {
             key: state.cards.length ? state.cards[state.cards.length - 1].key + 1 : 0,
             title,
             icon: 'list-alt',
-            cards: []
-          }
-        ]
+            cards: [],
+          },
+        ],
       }
     ));
   }
@@ -39,11 +40,11 @@ class Column extends React.Component {
     const {title, icon} = this.props;
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>{title}
+        <h3 className={styles.title}>
           <span className={styles.icon}>
             <Icon name={icon} />
           </span>
-            {title}
+          {title}
         </h3>
         <div className={styles.cards}>
           {this.state.cards.map(({ key, ...columnProps }) => (
