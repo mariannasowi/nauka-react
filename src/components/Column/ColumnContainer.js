@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import Column from './Column';
 import shortid from 'shortid';
-import ADD_CARD from '../../redux/cardsRedux.js';
+import {ADD_CARD} from '../../redux/cardsRedux.js';
 
 export const getCardsForColumn = ({cards}, columnId) => cards.filter(card => card.columnId == columnId);
 export const createActionAddCard = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_CARD });
@@ -12,7 +12,7 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = (dispatch, props) => ({
   addCard: title => dispatch(createActionAddCard({
-    listId: props.id,
+    columnId: props.id,
     title,
   })),
 });
