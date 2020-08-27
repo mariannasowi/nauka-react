@@ -1,9 +1,8 @@
 import {connect} from 'react-redux';
 import Search from './Search';
-import {
-  getSearchString,
-  countVisibleCards,
-  countAllCards,
+import {getSearchString, 
+  countVisibleCards, 
+  countAllCards, 
   createAction_changeSearchString,
 } from '../../redux/searchStringRedux';
 

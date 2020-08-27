@@ -6,17 +6,6 @@ import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 
 class Search extends React.Component {
-  static propTypes = {
-    text: PropTypes.string,
-    searchString: PropTypes.string,
-    changeSearchString: PropTypes.func,
-    countVisible: PropTypes.number,
-    countAll: PropTypes.number,
-  }
-
-  static defaultProps = {
-    text: settings.search.defaultText,
-  }
 
   state = {
     value: this.props.searchString,
@@ -59,6 +48,18 @@ class Search extends React.Component {
         </div>
       </div>
     );
+  }
+
+  static propTypes = {
+    text: PropTypes.string,
+    searchString: PropTypes.string,
+    changeSearchString: PropTypes.func,
+    countVisible: PropTypes.number,
+    countAll: PropTypes.number,
+  }
+
+  static defaultProps = {
+    text: settings.search.defaultText,
   }
 }
 

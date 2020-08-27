@@ -2,24 +2,12 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import {settings} from '../../data/dataStore';
-import Card from '../Card/Card.js';
-import Creator from '../Creator/Creator.js';
-import Icon from '../Icon/Icon.js';
+import Card from '../Card/Card';
+import Creator from '../Creator/Creator';
+import Icon from '../Icon/Icon';
 
   
 class Column extends React.Component {
-
-  static propTypes = {
-    title: PropTypes.node.isRequired,
-    cards: PropTypes.array,
-    id: PropTypes.string,
-    icon: PropTypes.string,
-    addCard: PropTypes.func,
-  }
-
-  static defaultProps = {
-    icon: settings.defaultColumnIcon,
-  }
 
   render() {
     const {title, icon, cards, addCard} = this.props;
@@ -41,6 +29,18 @@ class Column extends React.Component {
         </div>
       </section>
     );
+  }
+
+  static propTypes = {
+    title: PropTypes.node.isRequired,
+    cards: PropTypes.array,
+    id: PropTypes.string,
+    icon: PropTypes.string,
+    addCard: PropTypes.func,
+  }
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
   }
 }
   

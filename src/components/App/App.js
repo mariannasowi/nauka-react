@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './App.scss';
 import PropTypes from 'prop-types';
-import List from '../List/ListContainer.js';
-import Search from '../Search/SearchContainer.js';
+import List from '../List/ListContainer';
+import Search from '../Search/SearchContainer';
 
 class App extends React.Component {
+  
   render() {
     const {title, subtitle, lists} = this.props;
     return (
@@ -18,6 +19,7 @@ class App extends React.Component {
       </main>
     );
   }
+
   static propTypes = {
     title: PropTypes.node,
     subtitle: PropTypes.node,

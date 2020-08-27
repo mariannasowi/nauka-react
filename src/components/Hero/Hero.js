@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from './Hero.scss';
 import PropTypes from 'prop-types';
@@ -13,7 +12,6 @@ const Hero = props => (
 
 Hero.propTypes = {
   titleText: PropTypes.node.isRequired,
-  imageProp: PropTypes.string,
 };
 
 export default Hero; 

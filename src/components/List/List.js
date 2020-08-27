@@ -2,26 +2,12 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
-import Column from '../Column/ColumnContainer.js';
+import Column from '../Column/ColumnContainer';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
-import Creator from '../Creator/Creator.js';
+import Creator from '../Creator/Creator';
 
 class List extends React.Component {
-
-  static propTypes = {
-    title: PropTypes.node.isRequired,
-    description: PropTypes.node, 
-    columns: PropTypes.array,
-    image: PropTypes.string,
-    cards: PropTypes.string,
-    addColumn: PropTypes.func,
-  }
-
-  static defaultProps = {
-    description: <p>I can do all the things!!!</p>,
-    icon: settings.defaultColumnIcon,
-  }
   
   render() {
     const {title, image, description, columns, addColumn} = this.props;
@@ -41,6 +27,20 @@ class List extends React.Component {
         </div>
       </section>
     );
+  }
+
+  static propTypes = {
+    title: PropTypes.node.isRequired,
+    description: PropTypes.node, 
+    columns: PropTypes.array,
+    image: PropTypes.string,
+    cards: PropTypes.string,
+    addColumn: PropTypes.func,
+  }
+
+  static defaultProps = {
+    description: <p>I can do all the things!!!</p>,
+    icon: settings.defaultColumnIcon,
   }
 }
 
