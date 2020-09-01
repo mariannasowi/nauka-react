@@ -1,10 +1,6 @@
 import {connect} from 'react-redux';
 import List from './List';
-import shortid from 'shortid';
-import {ADD_COLUMN} from '../../redux/columnsRedux';
-
-export const getColumnsForList = ({columns}, listId) => columns.filter(column => column.listId == listId);
-export const createActionAddColumn = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_COLUMN });
+import { getColumnsForList, createActionAddColumn } from '../../redux/columnsRedux';
 
 const mapStateToProps = (state, props) => ({
   columns: getColumnsForList(state, props.id),

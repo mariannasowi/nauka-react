@@ -39,7 +39,6 @@ class List extends React.Component {
   }
 
   static defaultProps = {
-    description: <p>I can do all the things!!!</p>,
     icon: settings.defaultColumnIcon,
   }
 }
