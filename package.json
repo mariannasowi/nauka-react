@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "lint": "eslint src/",
-    "server": "json-server --port 3131 --no-cors --delay 250 --watch dist/db/app.json"
+    "server": "http-server dist"
   },
   "husky": {
     "hooks": {
