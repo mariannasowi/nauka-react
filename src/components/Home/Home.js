@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Home.scss';
-import List from '../List/ListContainer.js';
-import Search from '../Search/SearchContainer.js';
+import List from '../List/ListContainer';
+import Search from '../Search/SearchContainer';
 import propTypes from 'prop-types';
 import {DragDropContext} from 'react-beautiful-dnd';
 
