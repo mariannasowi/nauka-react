@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 import {Draggable} from 'react-beautiful-dnd';
 
 class Card extends React.Component {
+  
+  static propTypes = {
+    title: PropTypes.node.isRequired,
+    id: PropTypes.string,
+    index: PropTypes.number,
+  };
 
   render() {
     const {title, id, index} = this.props;
@@ -22,12 +28,6 @@ class Card extends React.Component {
       </Draggable>
     );
   }
-
-  static propTypes = {
-    title: PropTypes.node.isRequired,
-    id: PropTypes.string,
-    index: PropTypes.number,
-  };
 }	
 
 export default Card; 

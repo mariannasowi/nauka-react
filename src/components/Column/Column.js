@@ -7,9 +7,20 @@ import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
 import {Droppable} from 'react-beautiful-dnd';
 
-  
 class Column extends React.Component {
 
+  static propTypes = {
+    title: PropTypes.node.isRequired,
+    cards: PropTypes.array,
+    icon: PropTypes.string,
+    addCard: PropTypes.func,
+    id: PropTypes.string,
+  }
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
+  }
+  
   render() {
     const {title, icon, cards, addCard, id} = this.props;
     return (
@@ -38,18 +49,6 @@ class Column extends React.Component {
         </div>
       </section>
     );
-  }
-
-  static propTypes = {
-    title: PropTypes.node.isRequired,
-    cards: PropTypes.array,
-    icon: PropTypes.string,
-    addCard: PropTypes.func,
-    id: PropTypes.string,
-  }
-
-  static defaultProps = {
-    icon: settings.defaultColumnIcon,
   }
 }
   

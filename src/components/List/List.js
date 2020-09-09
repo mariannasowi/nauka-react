@@ -9,6 +9,19 @@ import Creator from '../Creator/Creator';
 import Container from '../Container/Container';
 
 class List extends React.Component {
+
+  static propTypes = {
+    title: PropTypes.node.isRequired,
+    description: PropTypes.node, 
+    columns: PropTypes.array,
+    image: PropTypes.string,
+    cards: PropTypes.string,
+    addColumn: PropTypes.func,
+  }
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
+  }
   
   render() {
     const {title, image, description, columns, addColumn} = this.props;
@@ -30,19 +43,6 @@ class List extends React.Component {
         </section>
       </Container>
     );
-  }
-
-  static propTypes = {
-    title: PropTypes.node.isRequired,
-    description: PropTypes.node, 
-    columns: PropTypes.array,
-    image: PropTypes.string,
-    cards: PropTypes.string,
-    addColumn: PropTypes.func,
-  }
-
-  static defaultProps = {
-    icon: settings.defaultColumnIcon,
   }
 }
 

@@ -9,6 +9,7 @@ export const settings = {
   search: {
     defaultText: 'Search...',
     icon: 'search',
+    resultTitle: 'Search results:',
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
