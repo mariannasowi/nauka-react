@@ -1,11 +1,17 @@
 import React from 'react';
 import Container from '../Container/Container';
+import Hero from '../Hero/Hero';
+import propTypes from 'prop-types';
+import {infoContents} from '../../data/dataStore';
 
 const Info = () => (
   <Container>
-    <h2>Info</h2>
-    <p>TACO HEMINGWAY: WWA NIE BERLIN</p>
+    <Hero titleText={infoContents.title} />
   </Container>
 );
+
+Info.propTypes = {
+  title: propTypes.string,
+};
 
 export default Info;

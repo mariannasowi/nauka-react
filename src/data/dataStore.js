@@ -16,8 +16,18 @@ export const settings = {
 };
 
 export const pageContents = {
-  title: 'My first React app',
-  subtitle: 'A simple to-do app, with lists, columns and cards',
+  title: 'My first React app.',
+  subtitle: 'A simple to-do app, with lists, columns and cards.',
+};
+
+export const infoContents = {
+  title: 'TACO HEMINGWAY: WWA NIE BERLIN.',
+};
+
+export const faqContents = {
+  title: 'You.',
+  question: 'How are you?',
+  answer: 'I am fine.',
 };
 
 export const listData = {
