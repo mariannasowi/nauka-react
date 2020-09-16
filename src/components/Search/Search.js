@@ -31,9 +31,9 @@ class Search extends React.Component {
     });
   }
 
-  handleOK(){
-    this.props.changeSearchString(this.state.value);
-  }
+  // handleOK(){
+  //   this.props.history.push(`/search/${this.state.value}`);
+  // }
 
   componentDidUpdate(prevProps){
     if(this.props.searchString != prevProps.searchString){

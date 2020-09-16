@@ -3,8 +3,9 @@ import {NavLink, Link} from 'react-router-dom';
 import styles from './Header.scss';
 import Container from '../Container/Container';
 import Icon from '../Icon/Icon';
+import {withRouter} from 'react-router';
 
-class Header extends React.Component {
+class Search extends React.Component {
   
   render() {
     return (
@@ -26,4 +27,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header; 
+export default withRouter(Search);
