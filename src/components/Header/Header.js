@@ -4,8 +4,9 @@ import styles from './Header.scss';
 import Container from '../Container/Container';
 import Icon from '../Icon/Icon';
 import {withRouter} from 'react-router';
+import Search from '../Search/Search';
 
-class Search extends React.Component {
+class Header extends React.Component {
   
   render() {
     return (
@@ -15,6 +16,7 @@ class Search extends React.Component {
             <Link to='/' className={styles.logo}>
               <Icon name='moon' />
             </Link>
+            <Search />
             <nav>
               <NavLink exact to='/' activeClassName='active'>Home</NavLink>
               <NavLink exact to='/info' activeClassName='active'>Info</NavLink>
@@ -27,4 +29,4 @@ class Search extends React.Component {
   }
 }
 
-export default withRouter(Search);
+export default withRouter(Header);
