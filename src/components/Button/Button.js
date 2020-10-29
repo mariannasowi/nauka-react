@@ -5,12 +5,18 @@ import PropTypes from 'prop-types';
 const Button = ({variant = '', ...otherProps}) => (
   <button 
     {...otherProps} 
-    className={styles.component + variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')}
+    className={
+      styles.component + 
+      variant
+        .split(' ')
+        .map(name => ' ' + (styles[name] || name))
+        .join('')
+    }
   />
 );
 
 Button.propTypes = {
-  variant:PropTypes.string,
+  variant: PropTypes.string,
 };
 
 export default Button;

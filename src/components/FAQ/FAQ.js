@@ -1,19 +1,16 @@
 import React from 'react';
 import Container from '../Container/Container';
 import Hero from '../Hero/Hero';
-import propTypes from 'prop-types';
 import {faqContents} from '../../data/dataStore';
+import styles from './Faq.scss';
 
-const FAQ = () => (
-  <Container>
-    <Hero titleText={faqContents.title} />
-    <h2>{faqContents.question}</h2>
-    <p>{faqContents.answer}</p>
-  </Container>
+const Faq = () => (
+  <div className={styles.component}>
+    <Container>
+      <Hero titleText={faqContents.title} />
+      <p>{faqContents.text}</p>
+    </Container>
+  </div>
 );
 
-FAQ.propTypes = {
-  title: propTypes.string,
-};
-
-export default FAQ;
+export default Faq;

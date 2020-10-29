@@ -1,39 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../Search/Search.scss'; 
+import styles from './SearchResults.scss';
 import Container from '../Container/Container';
-import Hero from '../Hero/Hero';
-import {searchResultContent} from '../../data/dataStore';
-import ListLink from '../ListLink/ListLink';
+import { settings } from '../../data/dataStore';
+import Card from '../Card/Card';
+import Icon from '../Icon/Icon';
 
-class SearchResult extends React.Component {
+class SearchResults extends React.Component {
   static propTypes = {
-    id: PropTypes.string,
-    moveCard: PropTypes.func,
     title: PropTypes.string,
     cards: PropTypes.array,
     icon: PropTypes.node,
-  }
+  };
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
+  };
 
   render() {
-    const {cards} = this.props;
-
-    return(
-      <Container>
-        <Hero titleText={searchResultContent.title} imgSrc={searchResultContent.image} />
-        <section className={styles.component}>
+    const { title, icon, cards } = this.props;
+    return (
+      <section className={styles.component}>
+        <Container>
           <h3 className={styles.title}>
-            <span className={styles.icon}><i className={searchResultContent.icon}></i></span>
+            <span className={styles.icon}>
+              <Icon name={icon} />
+            </span>
+            {title}
           </h3>
-          <div className={styles.cards}>
-            {cards.map(cardData => (
-              <ListLink key={cardData.id} id={cardData.listId} title={cardData.listTitle} image={cardData.image} description={cardData.title + ' / ' + cardData.columnTitle} />
+
+          <div>
+            {cards.map((cardData) => (
+              <Card key={cardData.id} {...cardData} />
             ))}
           </div>
-        </section>
-      </Container>
+        </Container>
+      </section>
     );
   }
 }
 
-export default SearchResult;
+export default SearchResults;
