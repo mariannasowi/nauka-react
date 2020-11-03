@@ -15,7 +15,7 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
-    history: PropTypes.object,
+    history: PropTypes.any,
   }
 
   static defaultProps = {
@@ -23,7 +23,7 @@ class Search extends React.Component {
   }
 
   state = {
-    value: this.props.searchString || '',
+    value: this.props.searchString,
   }
 
   handleChange(event){
@@ -38,7 +38,6 @@ class Search extends React.Component {
     this.props.history.push(`/search/${this.state.value}`);
   }
   
-
   componentDidUpdate(prevProps){
     if(this.props.searchString != prevProps.searchString){
       this.setState({value: this.props.searchString});

@@ -1,14 +1,16 @@
 import {connect} from 'react-redux';
-import SearchResults from '../SearchResults/SearchResults';
-import {getCardsFromSearch} from '../../redux/cardsRedux';
-import { createAction_changeSearchString } from '../../redux/searchStringRedux.js';
+import SearchResults from './SearchResults';
+import {getCardsForList} from '../../redux/cardsRedux';
+import {getColumnsForList} from '../../redux/columnsRedux';
 
-const mapStateToProps = (state, props) => ({
-  cards: getCardsFromSearch(state, props.match.params.searchString),
-});
+const mapStateToProps = (state, props) => {
+  const searchstring = props.match.params.id;
 
-const mapDispatchToProps = (dispatch) => ({
-  changeSearchString: (newSearchString) =>
-    dispatch(createAction_changeSearchString(newSearchString)),
-});
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
+  return { 
+    cards: getCardsForList(state, searchstring),
+    columns: getColumnsForList(state, searchstring ),
+    lists: state.lists,
+  };
+};
+    
+export default connect(mapStateToProps)(SearchResults);

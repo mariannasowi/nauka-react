@@ -17,7 +17,8 @@ export const settings = {
 
 export const faqContents = {
   title: 'You.',
-  text: 'How are you? I am fine.',
+  question: 'How are you?',
+  answer: 'I am fine.',
 };
 
 export const infoContents = {

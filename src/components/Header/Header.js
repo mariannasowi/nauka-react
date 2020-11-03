@@ -8,6 +8,16 @@ import Search from '../Search/SearchContainer';
 
 class Header extends React.Component {
   
+  state = {
+    isActive: false,
+  }
+
+  toggleButton = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  }
+
   render() {
     return (
       <header className={styles.component}>
