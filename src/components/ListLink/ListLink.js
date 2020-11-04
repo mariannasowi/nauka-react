@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 
-const ListLink = ({id, title, image, description}) => (
-  <Link to={`/list/${id}`} className={styles.link}>
+const ListLink = ({listId, title, image, description}) => (
+  <Link to={`/list/${listId}`} className={styles.link}>
     <section className={styles.component}>
       <div className={styles.text}>
         <h2 className={styles.title}>{ReactHtmlParser(title)}</h2>
@@ -22,7 +22,7 @@ const ListLink = ({id, title, image, description}) => (
 );
 
 ListLink.propTypes = {
-  id: PropTypes.string,
+  listId: PropTypes.string,
   title: PropTypes.node.isRequired,
   description: PropTypes.node,
   image: PropTypes.string.isRequired,

@@ -8,7 +8,7 @@ const mapStateToProps = (state, props) => {
 
   return { 
     cards: getCardsForList(state, searchstring),
-    columns: getColumnsForList(state, searchstring ),
+    columns: getColumnsForList(state, searchstring),
     lists: state.lists,
   };
 };
