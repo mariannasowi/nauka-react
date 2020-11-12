@@ -5,7 +5,7 @@ import {createAction_moveCard} from '../../redux/cardsRedux';
 
 const mapStateToProps = (state, props) => {
   const id = props.match.params.id;
-  const filteredLists = state.lists.filter(list => list.id == id);
+  const filteredLists = state.lists.filter(list => list.listId == id);
   const listParams = filteredLists[0] || {};
 
   return {
