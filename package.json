@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "lint": "eslint src/",
-    "server": "http-server dist"
+    "server": "http-server dist",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -22,7 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "dist": "^0.1.2",
-    "http-server": "^0.12.3",
+    "http-server": "^0.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-beautiful-dnd": "^13.0.0",
@@ -33,7 +35,8 @@
     "react-router-transition": "^1.4.0",
     "redux": "^4.0.1",
     "shortid": "^2.2.15",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -57,5 +60,6 @@
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.1"
-  }
+  },
+  "snyk": true
 }
